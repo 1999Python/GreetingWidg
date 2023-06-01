@@ -7,8 +7,23 @@
         height: 40px;
         font-size: 1em;
     }
+    .message{
+        font-size: 2em;
+    color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+        padding: 2em;
+     padding-bottom: 12em;
+    } 
 
-    
+    .error{
+        font-size: 1em;
+    color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+        padding: 2em;
+   
+    }     
 
     .border-button {
         border: solid 5px #a4fc51;
@@ -26,7 +41,7 @@
     margin: 0 auto;
     padding: 20px;
     width: 350px;
-    height: 550px;
+    height: 750px;
 }
 .enter:hover{
     background-color: rgb(197, 238, 135);
@@ -100,6 +115,22 @@ input[type='radio']{
 }
 
 @media (min-width : 960px) {
+  .message{
+        font-size: 2em;
+    color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+        padding: 2em;
+     padding-bottom: 12em;
+    }                                                                                         
+
+    .error{
+        font-size: 1.3em;
+    color: rgb(255, 68, 0);
+      margin: 0 auto;
+     width: fit-content;
+     
+    }                                                                                         
 
     .Name{
         width: 210px;
@@ -108,8 +139,8 @@ input[type='radio']{
     }
    
  .enter{
-    width: 70px;
-    height: 40px;
+    width: 80px;
+    height: 50px;
     border: #000 solid 2px;
         margin-left: 12.5em;
         margin-bottom: 1.2em;
@@ -129,7 +160,7 @@ background-color: rgb(197, 238, 135);
         margin: 10em auto;
         padding: 10px;
         width: 550px;
-        height: 650px;
+        height: 790px;
     }
 
     .greet {

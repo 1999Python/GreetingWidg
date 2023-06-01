@@ -1,6 +1,5 @@
-////////////////////////////////////////////////////////////////////////
 //Selecting all the elements and buttons
-const valueLanguages = document.querySelector(".valueLanguages");
+const valueLanguages = document.querySelector(".itemTypeRadio");
 
 const enterButton = document.querySelector(".enter");
 
@@ -10,134 +9,77 @@ const valueDisplay = document.querySelector(".valueDisplay");
 
 const resetBtn = document.querySelector(".resetBtn");
 
-const errorElement = document.querySelector(".error");
+const error = document.querySelector(".error");
 
 const theMessage = document.querySelector(".theMessage");
 
 let counter = 0;
 
-////////////////////////////////////////////////////////////////////////
-//This is my text box function 
+let NameTotal = 0;
 
+let NameBasket = "";
 
-var nameBasket = " ";
-    
-function greetName(list) {
-
-    var currentList = list;
-
-    for (var i = 0; i < currentList.length; i++) {
-
-        var currentName = currentList[i].trim();
-
-        if (currentName === " ") {
-           return nameBasket;
-        }
-    }
-}
-/////////////////////////////////////////////////////////////////////////////
-/*
-This is my radio checker
-*/
-
-var valueLanguagesBasket = {};
-
-function greetNameL() {
-
-    var valueLanguages = document.querySelector("input[name='languageType']:checked");
-    
-    if (valueLanguages) {
-        var valueLanguages = valueLanguages.value
-    }
-
-}
-
-function englishRadio() {
-    if (valueLanguages.value === "english") {
-      return "Hello, " + Name + "!";
-    }
-  }
+let nameCheck = [];
 
 
 
-function afrikaansRadio() {
-    if (valueLanguages.value === "afrikaans") {
-        return "Haai, " + Name + "!";
-    }
-}
-
-function arabicRadio() {
-    if (valueLanguages.value === "arabic") {
-        return "Ahlan wa sahlan, " + Name + "!";
-    }
-}
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////
 function incrementCounter() {
+  if(Name.value !== ""){
     counter++;
-    document.querySelector(".valueDisplay").innerHTML = valueDisplay;
-  }
-
-enterButton.addEventListener("click", () => {
-    
-    if (greetName() !== "") {
-      incrementCounter();
-    }
-    
-    });
-/* What Im tryna say is that if a value is taken from Name and valueLanguages then the counter 
-should increment if not it shouldnt count.
-*/
-/////////////////////////////////////////////////////////////////////////////
-resetBtn.addEventListener("click", () => {
-    counter = 0;
     valueDisplay.innerHTML = counter;
+  }
+  else if(Name.value !== nameCheck){
+    counter++;
+  }
+}
+enterButton.addEventListener("click", incrementCounter);
+
+resetBtn.addEventListener("click", () => {
+  counter = 0;
+  theMessage.remove();
+  valueDisplay.innerHTML = counter;
+
 });
 
-
-
-// reset button should return to 0 once the reset button is pressed
-/////////////////////////////////////////////////////////////////////////////
-
 enterButton.addEventListener("click", function(){ 
-    
-    const Name = Name.value;
-     const valueLanguages = valueLanguages.value;
-    
-    if (Name === "") {
-        theMessage.innerHTML = "Please enter your name.";
+
+  const checkedRadioBtn = document.querySelector("input[name='languageType']:checked");
+  
+  if (!checkedRadioBtn && !Name.value){
+    error.innerHTML = "Please enter your name and a language.";
     }
-    if (valueLanguages === ""){
-    theMessage.innerHTML = "Please enter a language.";
-    }
+ else if (!Name.value) {
+      error.innerHTML = "Please enter your name.";
+  }
+  
+ else if (!checkedRadioBtn){
+    error.innerHTML = "Please select a language.";
+  
+  }
+  
+  });
+
+  function greetUser() {
+  
+    const checkedRadioBtn = document.querySelector("input[name='languageType']:checked");
+  if (checkedRadioBtn){
+      var greeting = checkedRadioBtn.value
+  }
     
-    if (valueLanguages === "" && Name === ""){
-    theMessage.innerHTML = "Please enter your name and a language.";
-    }
+      switch (greeting) {
+        case 'english':
+          greeting = 'Hello, ' + Name.value + '!';
+          break;
+        case 'afrikaans':
+          greeting = 'Haai, ' + Name.value + '!';
+          break;
+        case 'arabic':
+          greeting = 'مرحباً، ' + Name.value + '!';
+          break;
+      }
     
-    else{
-        const message = valueLanguages + Name;
-        theMessage.innerHTML = message;
-    }
-    
-    });
-
-
-
-
-
-
-
-
-   
-
-
-
+      // Display the greeting message
+      var messageDiv = document.querySelector('.theMessage');
+      messageDiv.textContent = greeting;
+  }
+  enterButton.addEventListener("click", greetUser);
