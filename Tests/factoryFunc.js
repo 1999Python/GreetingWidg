@@ -66,8 +66,8 @@ function MainGreetings() {
   }
   
   
-  function setCounter() {
-
+  function setCounter(value) {
+  counter = value;
   }
 
   function resetCounter() {
@@ -93,6 +93,7 @@ function MainGreetings() {
     setName,
     setLanguage,
     getCounter,
+    amountOfUsers,
     ValidateName,
     greetingTheUser
   }

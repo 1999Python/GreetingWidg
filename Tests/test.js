@@ -81,17 +81,18 @@ describe("Checking Validity of Username Entered", function () {
 })
 
 
-describe("counter", function () {
+describe("Counter", function () {
   it('should return with counter display of 3', function () {
+
     let greet = MainGreetings();
 
 
-    greet.getName("Raadiyah");
-    greet.getName("Akhona");
-    greet.getName("Saffah");
+    greet.setName("Raadiyah");
+    greet.setName("Akhona");
+    greet.setName("Saffah");
 
 
-    assert.equal(3, greet.getCounter());
+    assert.equal(3, greet.amountOfUsers());
   });
 
 
@@ -105,7 +106,7 @@ describe("counter", function () {
     greet.setName('Raadiyah')
 
 
-    assert.equal(1, greet.getName(name))
+    assert.equal(1, greet.amountOfUsers())
   })
 });
 
@@ -119,8 +120,8 @@ describe("Reseting The Counter", function () {
     greet.amountOfUsers("Tendani", "afrikaans")
     greet.amountOfUsers("Saffah", "arabic")
 
-    greet.getCounter()
+  
 
-    assert.equal( 0, greet.getCounter())
+    assert.equal( 0, greet.amountOfUsers())
   })
 })
