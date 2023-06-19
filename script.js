@@ -20,10 +20,21 @@ const theMessage = document.querySelector(".theMessage");
 enterButton.addEventListener("click", function () {
 
   greetingsApp.setName(nameElement.value)
+  
   const languageType = document.querySelector('input[name="languageType"]:checked');
   greetingsApp.setLanguage(languageType.value)
+
   theMessage.innerHTML = greetingsApp.greetingTheUser();
   valueDisplay.innerHTML = greetingsApp.amountOfUsers();
+ 
+  const errorMessage = greetingsApp.errorMessages();
+  if (errorMessage) {
+    error.textContent = errorMessage;
+  } else {
+    error.textContent = "";
+    theMessage.innerHTML = greetingsApp.greetingTheUser();
+    valueDisplay.innerHTML = greetingsApp.amountOfUsers();
+  }
 
 })
 

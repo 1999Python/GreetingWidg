@@ -3,7 +3,7 @@ function MainGreetings() {
   var languageType = '';
   var partyUsers = [];
   var userName = '';
-  let errorMessage = '';
+
 
   function setName(name) {
     if (ValidateName(name)) {
@@ -52,18 +52,20 @@ function MainGreetings() {
   }
 
   function errorMessages() {
-    //checking for the certain inputs that needed to be flled in or selected if not it return an error message.
-    if (!userName.match(/^[a-zA-Z]$/) && languageType === "") {
-      errorMessage = 'Please enter your name and select a language';
+    let errorMessage = '';
+  
+    if (!userName.match(/^[A-Za-z]+$/) && languageType === "") {
+      errorMessage = 'Please enter your name and select a language.';
+    } else if (!userName.match(/^[A-Za-z]+$/)) {
+      errorMessage = 'Please enter your name.';
+    } else if (languageType === "") {
+      errorMessage = 'Please select a language.';
     }
-    else if (languageType === "") {
-      errorMessage = 'Please select a language';
-    }
-    else if (!userName.match(/^[A-Za-z]+$/) === "") {
-      errorMessage = 'Please enter your name';
-    }
+  
     return errorMessage;
   }
+  
+  
   function setCounter() {
 
   }
