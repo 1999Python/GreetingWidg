@@ -93,7 +93,6 @@ function MainGreetings() {
     setName,
     setLanguage,
     getCounter,
-    amountOfUsers,
     ValidateName,
     greetingTheUser
   }
