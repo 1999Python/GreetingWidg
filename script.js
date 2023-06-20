@@ -18,30 +18,32 @@ const theMessage = document.querySelector(".theMessage");
 
 
 enterButton.addEventListener("click", function () {
-
-   
   const errorMessage = greetingsApp.errorMessages();
   if (errorMessage) {
     error.textContent = errorMessage;
+    theMessage.innerHTML = "";
+
+    setTimeout(() => {
+      error.textContent = "";
+    }, 3000); // Clear the greeting message
   } else {
     error.textContent = "";
+    greetingsApp.setName(nameElement.value);
+
+    const languageType = document.querySelector('input[name="languageType"]:checked').value;
+    greetingsApp.setLanguage(languageType);
     theMessage.innerHTML = greetingsApp.greetingTheUser();
     valueDisplay.innerHTML = greetingsApp.amountOfUsers();
+
+    setTimeout(() => {
+      theMessage.innerHTML = greetingsApp.greetingTheUser();
+      valueDisplay.innerHTML = greetingsApp.amountOfUsers();
+    }, 3000); // Clear greeting message and user count after 3 seconds
   }
-
-  greetingsApp.setName(nameElement.value)
-
-  const languageType = document.querySelector('input[name="languageType"]:checked');
-  greetingsApp.setLanguage(languageType.value)
-
-  theMessage.innerHTML = greetingsApp.greetingTheUser();
-  valueDisplay.innerHTML = greetingsApp.amountOfUsers();
-
-
-})
+});
 
 resetBtn.addEventListener("click", function () {
   greetingsApp.resetCounter();
   theMessage.innerHTML = greetingsApp.greetingTheUser();
   valueDisplay.innerHTML = greetingsApp.amountOfUsers();
-})
+});

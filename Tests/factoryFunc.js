@@ -52,13 +52,17 @@ function MainGreetings() {
   }
 
   function errorMessages() {
+    
     let errorMessage = '';
   
-    if (!userName.match(/^[A-Za-z]+$/) && languageType === "") {
+    if (!userName && !languageType) {
       errorMessage = 'Please enter your name and select a language.';
-    } else if (!userName.match(/^[A-Za-z]+$/)) {
+    } 
+    else if (!userName.match(/^[A-Za-z]+$/)) {
       errorMessage = 'Please enter your name.';
-    } else if (languageType === "") {
+    }
+    
+   else if (languageType === "") {
       errorMessage = 'Please select a language.';
     }
   
