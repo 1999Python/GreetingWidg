@@ -1,4 +1,6 @@
+
 function MainGreetings() {
+
   var counter = 0;
   var languageType = '';
   var partyUsers = [];
@@ -24,7 +26,7 @@ function MainGreetings() {
   }//getting the users
 
   function setLanguage(language) {
-    languageType = language;
+      languageType = language;
   }//setting the different type of languages
 
   function ValidateName(name) {
@@ -58,7 +60,7 @@ function MainGreetings() {
     if (!userName && !languageType) {
       errorMessage = 'Please enter your name and select a language.';
     } 
-    else if (!userName.match(/^[A-Za-z]+$/)) {
+    else if (!userName) {
       errorMessage = 'Please enter your name.';
     }
     
