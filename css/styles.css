@@ -13,8 +13,7 @@
         color: rgb(255, 68, 0);
         display: inline;
         text-align: center;
-        padding: 2em;
-        padding-bottom: 12em;
+      
     }
 
     .error {
@@ -22,8 +21,7 @@
         color: rgb(255, 68, 0);
         display: inline;
         text-align: center;
-        padding: 2em;
-
+    
     }
 
     .border-button {
@@ -44,7 +42,7 @@
         margin: 0 auto;
         padding: 20px;
         width: 350px;
-        height: 750px;
+        height: 650px;
     }
 
     .enter:hover {
@@ -165,27 +163,27 @@
         border: #e7e69d solid 12px;
         box-shadow: 20px 20px 20px #c671e7;
         font-size: larger;
-        margin: 1em auto;
+        margin: auto;
         padding: 10px;
         width: 550px;
-        height: 790px;
+        height: 690px;
     }
 
     .greet {
-        font-size: 3em;
+        font-size: 2.5em;
         text-align: center;
         color: black;
     }
 
     .langHeading {
 
-        font-size: 1.5em;
+        font-size: 1.3em;
         text-align: center;
         color: black;
     }
 
     .nameHeading {
-        font-size: 1.5em;
+        font-size: 1.3em;
         color: black;
     }
 
@@ -195,9 +193,9 @@
 
     .valueLanguages {
         color: black;
-        font-size: 1.5em;
+        font-size: 1.3em;
         display: inline;
-        margin-left: 1em;
+        margin-left: 1.3em;
     }
 
     input[type='radio'] {
@@ -213,7 +211,7 @@
 
     .resetBtn {
         margin-left: 11.5em;
-        margin-top: 0.5em;
+
         font-size: 1em;
         width: 110px;
         height: 55px;
