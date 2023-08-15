@@ -16,16 +16,26 @@ const error = document.querySelector(".error");
 const theMessage = document.querySelector(".theMessage");
 
 
+//local storage
+
+function updateStoredNames(name){
+  const storedNames = JSON.parse(localStorage.getItem('greetedNames')) || [];
+  storedNames.push(name)
+  localStorage.setItem('greetedNames', JSON.stringify(storedNames));
+}
 
 enterButton.addEventListener("click", function () {
 
   const languageTypeCheck = document.querySelector('input[name="languageType"]:checked');
 
   if (languageTypeCheck) {
-
+updateStoredNames(nameElement.value);
     greetingsApp.setLanguage(languageTypeCheck.value);
 
   }
+
+// localStorage.getItem("greetedNames");
+
 
   greetingsApp.setName(nameElement.value);
 
@@ -57,4 +67,6 @@ resetBtn.addEventListener("click", function () {
   greetingsApp.resetCounter();
   theMessage.innerHTML = greetingsApp.greetingTheUser();
   valueDisplay.innerHTML = greetingsApp.amountOfUsers();
+
+  localStorage.removeItem("greetedNames");
 });
