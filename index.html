@@ -9,58 +9,60 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
     body {
-      background-image:url('back.jpg');
+      background-image: url('back.jpg');
       background-color: #cccccc;
     }
   </style>
 </head>
 
- 
 
-  <section class="greetingSection">
-    <div>  <div class="error" ></div>
+
+<section class="greetingSection">
+  <div>
+    <div class="error"></div>
     <h3 class="greet">Greet Me :)</h3>
-    <div class="theMessage"></div></div>
-  
-
-    <div class="row">
-      <strong> <label for="Names" class="nameHeading">Name</label></strong>
-      <input type="text"  placeholder="    enter your name" class="Name" required >
-     
-    </div>
+    <div class="theMessage"></div>
+  </div>
 
 
-    <h5 class="langHeading">Language</h5>
-    <label class="valueLanguages">
-      <input type="radio" name="languageType" class="itemTypeRadio" value="english">
-      <span class="label-body">English</span>
-    </label>
+  <div class="row">
+    <strong> <label for="Names" class="nameHeading">Name</label></strong>
+    <input type="text" placeholder="    enter your name" class="Name" required>
 
-    <label class="valueLanguages">
-      <input type="radio" name="languageType" class="itemTypeRadio" value="afrikaans">
-      <span class="label-body">Afrikaans</span>
-    </label>
+  </div>
 
-    <label class="valueLanguages">
-      <input type="radio" name="languageType" class="itemTypeRadio" value="arabic">
-      <span class="label-body">Arabic</span>
-    </label>
-    
+
+  <h5 class="langHeading">Language</h5>
+  <label class="valueLanguages">
+    <input type="radio" name="languageType" class="itemTypeRadio" value="english">
+    <span class="label-body">English</span>
+  </label>
+
+  <label class="valueLanguages">
+    <input type="radio" name="languageType" class="itemTypeRadio" value="afrikaans">
+    <span class="label-body">Afrikaans</span>
+  </label>
+
+  <label class="valueLanguages">
+    <input type="radio" name="languageType" class="itemTypeRadio" value="arabic">
+    <span class="label-body">Arabic</span>
+  </label>
+
+  <br>
+  <br>
+  <button class="enter" type="button" name="button">Enter</button>
+  <br>
+
+  <div class="">
+
+    <span class="valueDisplay">0</span>
     <br>
     <br>
-    <button class="enter" type="button" name="button">Enter</button>
-<br>
+    <button class="resetBtn">Reset Counter</button>
+  </div>
 
-    <div class="">
-
-      <span class="valueDisplay">0</span>
-      <br>
-      <br>
-      <button class="resetBtn">Reset Counter</button>
-    </div>
-   
-  </section>
-  <footer>&#169 Raadiyah Arend Copyright 2023</footer>
+</section>
+<footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 <script src="Tests/factoryFunc.js"></script>
 <script src="script.js"></script>

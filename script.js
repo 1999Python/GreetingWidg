@@ -42,15 +42,14 @@ enterButton.addEventListener("click", function () {
   else {
     error.textContent = "";
     greetingsApp.setName(nameElement.value);
-
     
     theMessage.innerHTML = greetingsApp.greetingTheUser();
     valueDisplay.innerHTML = greetingsApp.amountOfUsers();
 
     setTimeout(() => {
-      theMessage.innerHTML = greetingsApp.greetingTheUser();
-      valueDisplay.innerHTML = greetingsApp.amountOfUsers();
-    }, 2000); // Clear greeting message and user count after 3 seconds
+      theMessage.textContent = "";
+
+    }, 3000); // Clear greeting message and user count after 3 seconds
   }
 });
 
